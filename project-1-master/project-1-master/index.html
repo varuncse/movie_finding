@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/jpg" href="assets/images/tab-icon.jpg">
+    <title>FIND IT STREAM IT!</title>
+</head>
+
+<body>
+
+    <div id="image-div" style="height:0px;width:120px">
+        <img src="assets/images/netflix.png" style="width:60px">
+        <img src="assets/images/amazon-prime.png" style="width:60px">
+        <img src="assets/images/hulu.png" style="width:60px;padding-top:10px">
+        <img src="assets/images/googlelogo.jfif" style="width:60px;padding: 0px 15px" alt="Google Play">
+        <img src="assets/images/ituneslogo.png" style="width:60px" alt="iTunes">
+        <img src="assets/images/hbonow.png" style="width:60px">
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 bg-white " id="left">
+                <div class="left-contents">
+                    <div class="row text-center">
+                        <div class="col-2 my-2"></div>
+                        <div class="col-4 my-4"><img class="img-fluid" src="assets/images/stream.png" alt="Stream Icon"
+                                id="stream-icon">
+                            <p>Pick Your <br> Streaming Platforms</p>
+                        </div>
+                        <div class="col-4 my-4"><img class="img-fluid" src="assets/images/search2.png" alt="Search Icon"
+                                id="search-icon">
+                            <p>Search for <br> Your Movie/TV! </p>
+                        </div>
+                    </div>
+
+                    <!-- Used For Sticky Search -->
+                    <div id="stick-here"></div>
+                    <div id="stickThis"></div>
+
+                    <!-- Movie Search Form -->
+                    <form class="mx-5 sidebar-item">
+
+                        <!-- Streaming Info -->
+                        <div class="card border-0 mr-2">
+                            <h5 class="card-header bg-white border-bottom" style="text-align:center"><i
+                                    class="far fa-eye"></i>
+                                Your Streaming Services</h5>
+                            <div class="card-body px-5">
+
+                                <div class="container-fluid">
+                                    <div class="row justify-content-md-center ml-0" id="streaming-services">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Streaming Button -->
+                        <div class="dropdown">
+                            <button class="btn btn-primary btn-block mt-3 mb-5 dropdown-toggle" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Streaming Services
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="streaming">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Netflix" id="netflix">
+                                    <label class="form-check-label" for="netflix">
+                                        Netflix
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Amazon Prime Video"
+                                        id="amazon-prime-video">
+                                    <label class="form-check-label" for="amazon-prime">
+                                        Amazon Prime
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Hulu" id="hulu">
+                                    <label class="form-check-label" for="hulu">
+                                        Hulu
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Google Play"
+                                        id="google-play">
+                                    <label class="form-check-label" for="google-play">
+                                        Google Play
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="iTunes" id="itunes">
+                                    <label class="form-check-label" for="itunes">
+                                        Itunes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="HBO" id="hbo">
+                                    <label class="form-check-label" for="HBO">
+                                        HBO
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row mt-5 ">
+                            <label for="movie-input">
+                                <h3><i class="fas fa-film"></i> Movie/TV Search</h3>
+                            </label>
+                            <input type="" class="form-control shadow" id="movie-input"
+                                placeholder="Enter Movie/TV Search">
+                        </div>
+
+                        <!-- Movie Search Button -->
+                        <button type="submit" class="btn btn-primary btn-block mt-3 mb-5" id="submit"><i
+                                class="fas fa-search"></i>
+                            SearchMovie/TV
+                        </button>
+
+                        <!-- Favorite Section -->
+                        <div>
+                            <div class="card my-4" id="favorite-section">
+                                <h5 class="card-header"><i class="far fa-heart"></i> Queue</h5>
+                                <div class="card-body scroll" id="list-favorites">
+                                    <!-- INSERT FAVORITE CARDS HERE -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-7 bg-dark" id="right">
+
+                <!-- Movie Not Found Display -->
+                <div class="card mt-1" id="no-movie-info">
+                    <div class="card-body mr-n3">
+                        <h3>Movie/Show was not found. <i class="far fa-frown"></i></h3>
+                    </div>
+                </div>
+
+                <!-- Movie Info & Trailer Card -->
+                <div class="card mt-1" id="movie-info">
+                    <h5 class="card-header" id="movie-title"></h5>
+                    <div class="card-body mr-n3">
+
+                        <!-- Movie Info -->
+                        <div class="row">
+
+                            <!-- Movie Rating -->
+                            <div class="col-12">
+                                <div class="d-flex bd-highlight mt-n2">
+
+                                    <!-- Favorite Icon -->
+                                    <div class="mr-auto p-2 bd-highlight">
+                                        <i class="fas fa-heart fa-lg" id="fav-heart"></i>
+                                    </div>
+
+                                    <!-- Freshness Icon -->
+                                    <div class="p-2 bd-highlight"><img src="assets/images/fresh-score.png"
+                                            alt="Rotten Tomatoes Freshness" id="rt-fresh-img"><span
+                                            id="rt-fresh-score"></span>
+                                    </div>
+
+                                    <!-- Audience Icon -->
+                                    <div class="p-2 bd-highlight"><img src="assets/images/tr-audience.png"
+                                            alt="Rotten Tomatoes Audience" id="rt-audience-img"><span
+                                            id="rt-aud-score"></span>
+                                    </div>
+
+                                    <!-- IMDB Icon -->
+                                    <div class="p-2 bd-highlight"><img src="assets/images/imdb.png" alt="IMDB"
+                                            id="imdb-img"><span id="imdb-score"></span></div>
+                                </div>
+                            </div>
+
+                            <!-- MOVIE POSTER -->
+                            <div class="col-lg-5 col-12">
+                                <img src="https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg"
+                                    class="w-100 img-fluid rounded pr-4" alt="Movie Poster" id="movie-poster">
+                            </div>
+
+                            <!-- Movie Details -->
+                            <div class="col-lg-7 col-12 ">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item my-n1">
+                                        <h6>Genre:</h6>
+                                        <h6 id="movie-genre"></h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Rated:</h6>
+                                        <h6 id="movie-rated"></h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Runtime:</h6>
+                                        <h6 id="movie-runtime"></h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Release Date:</h6>
+                                        <h6 id="movie-release"></h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Director:</h6>
+                                        <h6 id="movie-director"></h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Actors:</h6>
+                                        <h6 id="movie-actors">
+
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item my-n1">
+                                        <h6>Plot:</h6>
+                                        <h6 id="movie-plot">
+
+                                        </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <br>
+
+                    </div>
+                    <!-- Trailer Section -->
+                    <div class="embed-responsive embed-responsive-16by9  mt-2 rounded" id="trailer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 bg-dark text-white-50" style="border-width:4px !important; bottom:0; width:100%;">
+        <div class="container text-center">
+            <small>Copyright &copy; 2020 by Clayton Hill, Lee Hawkins, and Jason Tompkins</small>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html
